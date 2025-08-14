@@ -52,3 +52,5 @@ function getSexagenaryYear(year, locale = "han") {
     ? `${stems[stemIdx]} ${branches[branchIdx]}`
     : `${stems[stemIdx]}${branches[branchIdx]}`;
 }
+
+module.exports = { getSexagenaryYear };

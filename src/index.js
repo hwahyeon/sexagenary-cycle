@@ -12,6 +12,8 @@ const BRANCHES = {
   vn:  ['Tý','Sửu','Dần','Mão','Thìn','Tỵ','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi'],
 };
 
+const VALID_LOCALES = ['kr', 'cn', 'jp', 'vn', 'han'];
+
 /**
  * Convert a civil year to its corresponding sexagenary cycle notation.
  * @param {number} year - Civil year: ...,-2(BC2),-1(BC1),1(AD1),2...
@@ -26,9 +28,13 @@ function getSexagenaryYear(year, locale = "han") {
   }
 
   locale = String(locale).toLowerCase();
+  if (!VALID_LOCALES.includes(locale)) {
+    throw new RangeError(
+      `Invalid locale: ${locale}. Must be one of ${VALID_LOCALES.join(", ")}`
+    );
+  }
 
-  // Adjust for BC (no year 0 in historical calendar)
-  const y = year <= 0 ? year + 1 : year;
+  const y = year <= 0 ? year + 1 : year; // BC adjustment
   const d = y - 1984; // 1984 = 甲子
 
   const stemIdx = ((d % 10) + 10) % 10;

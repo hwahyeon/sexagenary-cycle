@@ -28,5 +28,11 @@
   "devDependencies": {
     "jest": "^30.0.5"
   },
+  "files": [
+    "src",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "homepage": "https://github.com/hwahyeon/sexagenary-cycle#readme"
 }

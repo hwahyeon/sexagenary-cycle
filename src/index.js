@@ -1,4 +1,4 @@
-/** @typedef {'kr'|'cn'|'jp'|'vn'} Locale */
+/** @typedef {'kr'|'cn'|'jp'|'vn'|'han'} Locale */
 
 const STEMS = {
   kr: ['갑','을','병','정','무','기','경','신','임','계'],
